@@ -1,0 +1,38 @@
+{
+	"info": {
+		"name": "MeLi",
+		"_postman_id": "701f4141-a75b-972d-37d6-bcc552318a65",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "isMutant",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"dna\":[\"ATGCGA\",\"CAGTGC\",\"TTATTT\",\"AGACGG\",\"GCGTCA\",\"TCACTG\"]\n}"
+				},
+				"url": {
+					"raw": "localhost:8000/mutant",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"mutant"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

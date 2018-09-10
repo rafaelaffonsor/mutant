@@ -1,1 +1,2 @@
-# mutant
+# dep ensure
+# go run main.go

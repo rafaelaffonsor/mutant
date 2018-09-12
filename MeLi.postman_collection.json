@@ -7,7 +7,7 @@
 	},
 	"item": [
 		{
-			"name": "isMutant",
+			"name": "isMutant_local",
 			"request": {
 				"method": "POST",
 				"header": [
@@ -18,16 +18,34 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\"dna\":[\"ATGCGA\",\"CAGTGC\",\"TTATTT\",\"AGACGG\",\"GCGTCA\",\"TCACTG\"]\n}"
+					"raw": "{\n\"dna\":[\"ACGCGA\",\"CAGTGC\",\"TTAGTT\",\"AGACGG\",\"GCATCA\",\"TCAAGG\"]\n}"
 				},
 				"url": {
-					"raw": "localhost:8000/mutant",
+					"raw": "localhost/mutant",
 					"host": [
 						"localhost"
 					],
-					"port": "8000",
 					"path": [
 						"mutant"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "stats_local",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "localhost/stats",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"stats"
 					]
 				},
 				"description": ""

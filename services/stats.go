@@ -11,12 +11,13 @@ func List() map[string]float64 {
 
 	defer db.Close()
 
+	var totalHumans = 0.0
+	var totalMutants = 0.0
+	var ratio = 0.0
+
 	mutants, err := db.Query("select count(dna) from mutants where is_mutant = 1")
 
 	if err != nil {
-		if err == sql.ErrNoRows {
-			panic(err.Error())
-		}
 		panic(err.Error())
 	}
 	defer mutants.Close()
@@ -24,16 +25,16 @@ func List() map[string]float64 {
 	humans, err := db.Query("select count(dna)from mutants where is_mutant = 0")
 
 	if err != nil {
-		if err == sql.ErrNoRows {
-			panic(err.Error())
-		}
 		panic(err.Error())
 	}
 	defer humans.Close()
 
-	totalMutants := float64(checkCount(mutants))
-	totalHumans := float64(checkCount(humans))
-	ratio := math.Abs(totalMutants / totalHumans)
+	totalMutants = float64(checkCount(mutants))
+	totalHumans = float64(checkCount(humans))
+
+	if totalHumans > 0 && totalMutants > 0 {
+		ratio = math.Abs(totalMutants / totalHumans)
+	}
 
 	result := map[string]float64{
 		"count_mutant_dna":  totalMutants,

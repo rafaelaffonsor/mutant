@@ -5,4 +5,4 @@ start:
 	- docker-compose up -d
 
 mysql-ip:
-	- docker inspect --format='{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' meli_mysql
+	- docker inspect --format='{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' mutant_mysql

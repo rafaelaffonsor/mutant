@@ -1,11 +1,11 @@
 package config
 
 const (
-	DB_HOST = "172.0.0.1"
+	DB_HOST = "172.22.0.2"
 	DB_DRIVER = "mysql"
-	DBUSER = "meli"
-	DBPASSWORD = "meli"
-	DBNAME = "meli"
+	DBUSER = "mutant"
+	DBPASSWORD = "mutant"
+	DBNAME = "mutant"
 	DBPORT = "3306"
 	DB_STRING_CONNECTION = DBUSER + ":" + DBPASSWORD + "@tcp("+ DB_HOST + ":" + DBPORT + ")/" + DBNAME + "?charset=utf8&parseTime=True"
 )

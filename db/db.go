@@ -3,7 +3,7 @@ package db
 import (
 	"database/sql"
 	_ "github.com/go-sql-driver/mysql"
-	"meli/config"
+	"mutant/config"
 	)
 
 func DbConn() (db *sql.DB) {

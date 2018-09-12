@@ -2,27 +2,27 @@ version: '2'
 services:
   app:
     image: golang:1.8-alpine
-    container_name: meli_app
+    container_name: mutant_app
     ports:
     - "80:8080"
     links:
     - mysql
     volumes:
-    - .:/go/src/meli
-    working_dir: /go/src/meli
+    - .:/go/src/mutant
+    working_dir: /go/src/mutant
     command: go run main.go
     environment:
       PORT: '8080'
 
   mysql:
     image: mysql
-    container_name: meli_mysql
+    container_name: mutant_mysql
     command: mysqld --default-authentication-plugin=mysql_native_password
     restart: always
     ports:
     - "3306:3306"
     environment:
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_USER: meli
-      MYSQL_PASSWORD: meli
-      MYSQL_DATABASE: meli
+      MYSQL_USER: mutant
+      MYSQL_PASSWORD: mutant
+      MYSQL_DATABASE: mutant

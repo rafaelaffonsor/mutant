@@ -5,8 +5,7 @@ import (
 	"log"
 	"meli/db"
 	"net/http"
-	"encoding/json"
-	"net/http/httptest"
+		"net/http/httptest"
 	"github.com/gorilla/mux"
 )
 
@@ -46,10 +45,4 @@ func TestPostWithoutDna(t *testing.T) {
 	response := executeRequest(req)
 
 	checkResponseCode(t, http.StatusNotFound, response.Code)
-
-	var m map[string]string
-	json.Unmarshal(response.Body.Bytes(), &m)
-	if m["error"] != "Product not found" {
-		t.Errorf("Expected the 'error' key of the response to be set to 'Product not found'. Got '%s'", m["error"])
-	}
 }

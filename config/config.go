@@ -1,7 +1,7 @@
 package config
 
 const (
-	DB_HOST = "172.21.0.2"
+	DB_HOST = "172.0.0.1"
 	DB_DRIVER = "mysql"
 	DBUSER = "meli"
 	DBPASSWORD = "meli"

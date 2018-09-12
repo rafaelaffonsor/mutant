@@ -1,7 +1,7 @@
 package config
 
 const (
-	DB_HOST = "172.22.0.2"
+	DB_HOST = "172.25.0.2"
 	DB_DRIVER = "mysql"
 	DBUSER = "mutant"
 	DBPASSWORD = "mutant"

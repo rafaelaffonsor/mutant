@@ -10,6 +10,9 @@ services:
     volumes:
     - .:/go/src/mutant
     working_dir: /go/src/mutant
+    networks:
+      mutant-network:
+        ipv4_address: 172.25.0.3
     command: go run main.go
     environment:
       PORT: '8080'
@@ -28,3 +31,10 @@ services:
       MYSQL_USER: mutant
       MYSQL_PASSWORD: mutant
       MYSQL_DATABASE: mutant
+    networks:
+      mutant-network:
+        ipv4_address: 172.25.0.2
+
+networks:
+  mutant-network:
+    external: true
